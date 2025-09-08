@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Guisine - Votre app de recettes préférée</title>
+    <meta name="description" content="Découvrez La Guisine, l'app de recettes avec plus de 60 recettes faciles, un mode cuisine intégré et vos favoris personnalisés.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/Logo White - Black Background.png" alt="La Guisine Logo">
+                    <span class="logo-text">La Guisine</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Accueil</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy-policy.html">Confidentialité</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Cuisinez avec passion</h1>
+            <p>Découvrez plus de 60 recettes faciles avec La Guisine, votre compagnon culinaire idéal pour des plats savoureux au quotidien.</p>
+            
+            <div class="hero-image">
+                <img src="images/recipes.png" alt="Aperçu de l'application La Guisine">
+            </div>
+            
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <img src="images/Telecharger dans lapp store.png" alt="Télécharger sur l'App Store">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section">
+        <div class="container">
+            <h2>Pourquoi choisir La Guisine ?</h2>
+            
+            <div class="features-grid">
+                <div class="feature card">
+                    <div class="feature-icon">
+                        <div style="font-size: 40px;">📚</div>
+                    </div>
+                    <h3>Plus de 60 recettes faciles</h3>
+                    <p>Une collection soigneusement sélectionnée de recettes simples et délicieuses, parfaites pour tous les niveaux de cuisine.</p>
+                </div>
+                
+                <div class="feature card">
+                    <div class="feature-icon">
+                        <div style="font-size: 40px;">👨‍🍳</div>
+                    </div>
+                    <h3>Mode "En cuisine !" intégré</h3>
+                    <p>Cuisinez étape par étape avec notre mode guidé incluant un timer intégré pour ne jamais rater vos préparations.</p>
+                </div>
+                
+                <div class="feature card">
+                    <div class="feature-icon">
+                        <div style="font-size: 40px;">❤️</div>
+                    </div>
+                    <h3>Vos recettes en favoris</h3>
+                    <p>Sauvegardez vos recettes préférées et créez votre collection personnalisée pour un accès rapide à vos plats favoris.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section" style="background-color: #FCF9F1;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 60px;">Découvrez l'application en images</h2>
+            
+            <div class="screenshots-container">
+                <img src="images/recipes.png" alt="Interface de découverte des recettes">
+                <img src="images/cooking mode.png" alt="Mode cuisine avec timer intégré">
+                <img src="images/favorites.png" alt="Page des recettes favorites">
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download section">
+        <div class="container">
+            <h2>Commencez à cuisiner dès maintenant</h2>
+            <p>Téléchargez La Guisine gratuitement et transformez votre façon de cuisiner.</p>
+            
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <img src="images/Telecharger dans lapp store.png" alt="Télécharger sur l'App Store">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="images/Logo Black - White Background.png" alt="La Guisine Logo" style="width: 32px; height: 32px;">
+                    <span class="logo-text" style="color: white;">La Guisine</span>
+                </div>
+                
+                <ul class="footer-links">
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="privacy-policy.html">Politique de confidentialité</a></li>
+                </ul>
+                
+                <div>
+                    <p style="margin: 0; color: #9CA3AF; font-size: 14px;">© 2025 La Guisine. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.card, .screenshot-item, .feature');
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Remove parallax effect to fix scrolling issues
+
+            // Header scroll effect
+            const header = document.querySelector('header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        header.style.background = 'rgba(255, 255, 255, 0.98)';
+                        header.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+                    } else {
+                        header.style.background = 'rgba(255, 255, 255, 0.95)';
+                        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
